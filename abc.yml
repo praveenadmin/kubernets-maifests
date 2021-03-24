@@ -1,0 +1,13 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: myapplication
+      labels:
+        app: javaapp
+  spec:
+    containers: 
+      name: javawebapp
+	image: praveenadmin/java-web-app:1
+	ports:
+	  port: 8080

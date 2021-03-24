@@ -1,0 +1,26 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadeata:
+  name: javaapp
+  labels:
+   app: myjavaapp
+  spec:
+   containers:
+    - name: myjavaapp
+      image: praveenadmin/java-web-app:1
+      ports:
+       containerPort: 8080
+---
+ apiVersion: v1
+ kind: service
+ metadata:
+  name: myjavasvc
+ spec:
+  type: ClusterIP
+  selector:
+   app: myjavaapp
+  ports:
+   - port: 80
+     targetPort: 8080
+
